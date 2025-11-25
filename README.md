@@ -1,33 +1,76 @@
-# TinyLink
+# 🚀 TinyLink — Neon UI Short Link Generator
 
-TinyLink is a small URL shortener built with Next.js, Tailwind CSS and Postgres.
+**🔗 Live Demo (Public):**  
+👉 https://tinylink-3p0fd46a4-shubham-keshris-projects-1365da39.vercel.app
 
-## Features
-- Create short links (custom codes allowed)
-- Redirect with 302
-- Increment click count and last-clicked time
-- Delete links
-- Dashboard and per-code stats
-- Healthcheck `/healthz`
+This is a modern, neon-themed URL shortener built with **Next.js 14**, **Tailwind CSS**, and deployed on **Vercel**.  
+Anyone can open the live link above and view the full UI publicly.
 
-## Run locally
-1. Copy files and set `.env` using `.env.example`.
-2. Create Postgres and run migration: `npm run migrate` (requires psql CLI and DATABASE_URL set).
-3. Install: `npm install`
-4. Run dev server: `npm run dev`
+---
 
-## Tests
-Make sure app is running on `TEST_BASE_URL` (defaults to `http://localhost:3000`). Then:
+## ✨ Features
 
-```
-npm test
-```
+- 🔗 Create custom short URLs  
+- 🎨 Neon Black + Red modern glassmorphism UI  
+- 📊 Dashboard-style layout  
+- 🚀 Automatic redirect from `/` → `/dashboard`  
+- ⭐ Fully deployed and publicly accessible  
+- ⚡ Fast Next.js production build  
 
-Tests use Mocha + Supertest to hit the running server.
+---
 
-## API endpoints (required by autograder)
-- POST `/api/links` - Create link (409 if code exists)
-- GET `/api/links` - List links
-- GET `/api/links/:code` - Get stats
-- DELETE `/api/links/:code` - Delete link
-- GET `/healthz` - Health check
+## 🖼️ UI Preview  
+*(Optional: add screenshots later)*
+
+---
+
+## 🛠️ Tech Stack
+
+- **Next.js 14 (Pages Router)**
+- **React**
+- **Tailwind CSS**
+- **Vercel Deployment**
+- **API Routes (basic demo version)**
+
+---
+
+## 📂 Folder Structure
+pages/
+|_ index.js → redirects to /dashboard
+|_ dashboard.js → neon UI
+|_ api/links.js → demo API
+components/
+|_ Layout.jsx
+|_ NeonForm.jsx
+|_ NeonTable.jsx
+styles/
+|_ globals.css
+
+
+---
+
+## 🧪 Running Locally
+
+```bash
+# install dependencies
+npm install
+
+# start development server
+npm run dev
+
+# build for production
+npm run build
+
+# run production build locally
+npm run start
+🌐 Deployment
+
+This project deploys automatically on Vercel from the main branch.
+vercel --prod
+📌 Notes
+
+Current API uses in-memory storage (demo only)
+
+Production-ready database (Postgres + Prisma) can be added anytime
+
+UI is fully responsive and optimized for modern browsers
